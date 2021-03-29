@@ -40,7 +40,7 @@ int main(void)
     //to use scale all we would have to do is change
     //++b to something like b + 5 etc etc, matching
     //the highest divisible we want to use between the two numbers
-    for (int b = 0; b < largest; ++b){
+    for (int b = 0; b < largest; b += highestDivisible){
         int largestMinusCurrent = largest - b;
         if (b < largest - smallest){
             printf("%02d |  ############\n", largestMinusCurrent);
