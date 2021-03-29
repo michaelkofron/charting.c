@@ -42,7 +42,7 @@ int main(void)
     //the highest divisible we want to use between the two numbers
     for (int b = 0; b < largest; ++b){
         int largestMinusCurrent = largest - b;
-        if (b <= smallest){
+        if (b < largest - smallest){
             printf("%02d |  ############\n", largestMinusCurrent);
         } else {
             printf("%02d |  ############    $$$$$$$$$$$$\n", largestMinusCurrent);
