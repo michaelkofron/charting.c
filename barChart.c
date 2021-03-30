@@ -19,24 +19,12 @@ int main(void)
     int smallest = one > two ? two : one;
     int difference = largest - smallest;
     int highestDivisible;
-    //find highest divisible by iterating through
-    //the size of the smallest for like divisibility
-    //between smallest and largest
+    
     for (int i = 1; i <= smallest; ++i){
         if (largest % i == 0 && smallest % i == 0)
             highestDivisible = i;
     }
-
-    printf("\n\n\n");
-    //iterate through the largest value
-    //if number is less than smallest then print
-    //only the largest
-    //else print both largest and smallest lines
-    //
-    //to use scale all we would have to do is change
-    //++b to something like b + 5 etc etc, matching
-    //the highest divisible we want to use between the two numbers
-    //use an argument specified precision to make graphlines have same whitespace
+    printf("\n");
     
     int largestNumberSize = numPlaces(largest);
     for (int b = 0; b < largest; b += highestDivisible){
