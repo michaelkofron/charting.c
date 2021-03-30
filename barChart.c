@@ -3,7 +3,7 @@
 
 int numPlaces (int x)
 {
-    if (x < 0) return numPlaces ((n == INT_MIN) ? INT_MAX : -n);
+    if (x < 0) return numPlaces ((x == INT_MIN) ? INT_MAX : -x);
         if (x < 10) return 1;
             return 1 + numPlaces (x / 10);
 }
