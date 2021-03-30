@@ -8,7 +8,6 @@ int numPlaces (int x)
             return 1 + numPlaces (x / 10);
 }
 
-
 int main(void)
 {
     printf("Enter two numbers: ");
@@ -36,5 +35,4 @@ int main(void)
         }
     }
     return 0;
-
 }
