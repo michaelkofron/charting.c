@@ -16,15 +16,11 @@ int main(void)
     //initialize highest divisible
     int highestDivisible;
     //find highest divisible by iterating through
-    //the size of the difference for like divisibility
+    //the size of the smallest for like divisibility
     //between smallest and largest
-    for (int i = 1; i <= difference; ++i){
-
-        printf("checking %d \n", i);
-
-        if (largest % i == 0 && smallest % i == 0){
+    for (int i = 1; i <= smallest; ++i){
+        if (largest % i == 0 && smallest % i == 0)
             highestDivisible = i;
-        }
     }
 
 
