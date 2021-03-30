@@ -1,4 +1,13 @@
 #include <stdio.h>
+#include <limits.h>
+
+int numPlaces (int x)
+{
+    if (x < 0) return numPlaces ((n == INT_MIN) ? INT_MAX : -n);
+        if (x < 10) return 1;
+            return 1 + numPlaces (x / 10);
+}
+
 
 int main(void)
 {
@@ -6,14 +15,9 @@ int main(void)
     int one, two;
     scanf("%d %d", &one, &two);
 
-
-    //find the largets of the two
     int largest = one > two ? one : two;
-    //fint the smallest
     int smallest = one > two ? two : one;
-    //find the difference
     int difference = largest - smallest;
-    //initialize highest divisible
     int highestDivisible;
     //find highest divisible by iterating through
     //the size of the smallest for like divisibility
@@ -23,10 +27,6 @@ int main(void)
             highestDivisible = i;
     }
 
-
-    printf("%d is smaller than %d \n", smallest, largest);
-
-    printf("the largest divisible between them is %d \n", highestDivisible);
     printf("\n\n\n");
     //iterate through the largest value
     //if number is less than smallest then print
@@ -36,12 +36,15 @@ int main(void)
     //to use scale all we would have to do is change
     //++b to something like b + 5 etc etc, matching
     //the highest divisible we want to use between the two numbers
+    //use an argument specified precision to make graphlines have same whitespace
+    
+    int largestNumberSize = numPlaces(largest);
     for (int b = 0; b < largest; b += highestDivisible){
         int largestMinusCurrent = largest - b;
         if (b < largest - smallest){
-            printf("%02d |  ############\n", largestMinusCurrent);
+            printf("%*d |  ############\n", largestNumberSize, largestMinusCurrent);
         } else {
-            printf("%02d |  ############    $$$$$$$$$$$$\n", largestMinusCurrent);
+            printf("%*d |  ############    $$$$$$$$$$$$\n", largestNumberSize, largestMinusCurrent);
         }
     }
     return 0;
