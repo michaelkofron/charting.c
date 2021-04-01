@@ -23,7 +23,7 @@ int main(void)
         if (largest % i == 0 && smallest % i == 0)
             highestDivisible = i;
     }
-    printf("\n");
+    printf("\n\n");
     
     int largestNumberSize = numPlaces(largest);
     for (int b = 0; b < largest; b += highestDivisible){
